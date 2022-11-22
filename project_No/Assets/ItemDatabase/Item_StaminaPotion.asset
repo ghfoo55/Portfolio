@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50b4f343317953142b2735e59439d828, type: 3}
+  m_Name: Item_StaminaPotion
+  m_EditorClassIdentifier: 
+  type: 3
+  stackable: 1
+  icon: {fileID: 21300000, guid: ea4976a01def2904bb037c95561a436b, type: 3}
+  modelPrefab: {fileID: 7341613921438782498, guid: 8a377a36a151fbd4e84655181132f18d, type: 3}
+  data:
+    id: 3
+    name: 
+    buffs:
+    - stat: 4
+      value: 30
+      min: 30
+      max: 30
+  boneNames: []
+  description: 

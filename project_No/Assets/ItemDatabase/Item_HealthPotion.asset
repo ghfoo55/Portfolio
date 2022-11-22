@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50b4f343317953142b2735e59439d828, type: 3}
+  m_Name: Item_HealthPotion
+  m_EditorClassIdentifier: 
+  type: 2
+  stackable: 1
+  icon: {fileID: 21300000, guid: b2d2df7581eceb649b8222e6a469c943, type: 3}
+  modelPrefab: {fileID: 2802569567536279928, guid: 1bbde452281787b448e271c368036384, type: 3}
+  data:
+    id: 2
+    name: 
+    buffs:
+    - stat: 3
+      value: 150
+      min: 150
+      max: 150
+  boneNames: []
+  description: 
