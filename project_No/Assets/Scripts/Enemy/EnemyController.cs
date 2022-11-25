@@ -14,6 +14,7 @@ public class EnemyController : MonoBehaviour
     public float attackRange;
 
     public float attackDelay;
+    public float fireBallDelay;
 
     public Transform Target => bwv.NearestTarget;
 
@@ -22,18 +23,22 @@ public class EnemyController : MonoBehaviour
     public Transform targetWayPoint = null;
     
     private int wayPointIndex = 0;
-        
 
-    private void Start()
+    public Transform firePoint;
+
+    public GameObject fireBall;
+
+    protected void Start()
     {
         stateMachine = new StateMachine<EnemyController>(this, new PatrolWayPoint());
         stateMachine.AddState(new IdleState());
         stateMachine.AddState(new AttackState());
         stateMachine.AddState(new MoveState());
+        stateMachine.AddState(new BossAttackState());
 
         bwv = GetComponent<BlockWallView>();
     }
-
+ 
     private void Update()
     {
         stateMachine.Update(Time.deltaTime);
@@ -46,10 +51,11 @@ public class EnemyController : MonoBehaviour
             {
                 return false;
             }
-            float distance = Vector3.Distance(transform.position, Target.position);            
+            float distance = Vector3.Distance(transform.position, Target.position);
             return distance <= attackRange;
         }
-    }
+    }   
+
 
     public Transform SearchPlayer()
     {
@@ -67,5 +73,10 @@ public class EnemyController : MonoBehaviour
         wayPointIndex = (wayPointIndex + 1) % wayPoint.Length;
 
         return targetWayPoint;
+    }
+
+    public void FireBallShot()
+    {
+        Instantiate(fireBall, firePoint.position, firePoint.rotation);
     }
 }

@@ -31,7 +31,6 @@ public class PatrolWayPoint : State<EnemyController>
         {
             agent.SetDestination(context.targetWayPoint.position);
             anim.SetBool(hashMove, true);
-            enemy.enemyHPBar.SetActive(true);
         }
     }
 

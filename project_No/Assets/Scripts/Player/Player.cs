@@ -346,6 +346,10 @@ public class Player : MonoBehaviour, IHealth, IStamina, IBattle
         {            
             Attack(this);
         }
+        if(other.tag == "EnemyFireBall")
+        {
+            Attack(this);
+        }
         if(other.tag == "ItemShop")
         {
             ItemShop shop = other.GetComponent<ItemShop>();

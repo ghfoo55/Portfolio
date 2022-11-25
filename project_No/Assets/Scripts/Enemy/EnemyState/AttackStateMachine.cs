@@ -5,9 +5,9 @@ using UnityEngine;
 public class AttackStateMachine : StateMachineBehaviour
 {
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
-    //override public void onstateenter(animator animator, animatorstateinfo stateinfo, int layerindex)
+    //override public void OnStateEnter(Animator animator, AnimatorStateInfo stateinfo, int layerindex)
     //{
-    //    
+
     //}
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks

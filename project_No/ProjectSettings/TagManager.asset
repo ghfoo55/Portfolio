@@ -12,6 +12,8 @@ TagManager:
   - FxTemporaire
   - Item
   - ItemShop
+  - EnemyFireBall
+  - Wall
   layers:
   - Default
   - TransparentFX
@@ -24,7 +26,7 @@ TagManager:
   - MiniMap
   - EnemyAttack
   - Wall
-  - 
+  - EnemyFireBall
   - 
   - 
   - 

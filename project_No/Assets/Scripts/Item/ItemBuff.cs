@@ -4,10 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public enum CharacterAttribute
-{
-    Agility,
-    Intellect,    
-    Strength,
+{    
     Health,
     Stamina
 }

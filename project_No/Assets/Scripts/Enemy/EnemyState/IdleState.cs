@@ -9,6 +9,7 @@ public class IdleState : State<EnemyController>
     private float maxIdleTime = 3.0f;
     private float idleTime = 0.0f;
 
+    Enemy enemy;
     private Animator anim;
 
     protected int hashMove = Animator.StringToHash("IsMove");    
@@ -16,6 +17,7 @@ public class IdleState : State<EnemyController>
     public override void OnInitialized()
     {
         anim = context.GetComponent<Animator>();
+        enemy = GameManager.Inst.enemyMonster;
     }
 
     public override void OnEnter()
@@ -36,10 +38,14 @@ public class IdleState : State<EnemyController>
             if(context.IsAvailableAttack)
             {
                 stateMachine.ChangeState<AttackState>();
-            }
+            }            
             else
             {
                 stateMachine.ChangeState<MoveState>();
+            }
+            if (enemy.enemyType == Enemy.EnemyType.Boss && enemy.hp < enemy.MaxHP * 0.5f)
+            {
+                stateMachine.ChangeState<BossAttackState>();
             }
         }
         else if(isPatrol && stateMachine.ElapsedTimeInState > idleTime)

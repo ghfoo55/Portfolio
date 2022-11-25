@@ -25,6 +25,8 @@ public class Enemy : MonoBehaviour, IHealth, IBattle
        get => maxHP;
     }    
 
+    public enum EnemyType { Enemy, Boss }
+    public EnemyType enemyType;
     public System.Action onHPChange { get; set; }
 
     public float attackPower = 30.0f;
@@ -41,7 +43,7 @@ public class Enemy : MonoBehaviour, IHealth, IBattle
     Animator anim;
     NavMeshAgent agent;
     Player player;
-    
+    new Collider collider;
     void Start()
     {
         playerAttack = GameManager.Inst.MainPlayer.GetComponent<IBattle>();
@@ -49,6 +51,7 @@ public class Enemy : MonoBehaviour, IHealth, IBattle
         agent = GetComponent<NavMeshAgent>();
         enemyHPBar.SetActive(false);
         player = GameManager.Inst.MainPlayer;
+        collider = GetComponent<Collider>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -57,9 +60,7 @@ public class Enemy : MonoBehaviour, IHealth, IBattle
         {            
             Attack(this);
         }
-    }  
-
-    
+    }          
 
     public void Attack(IBattle target)
     {
@@ -80,8 +81,10 @@ public class Enemy : MonoBehaviour, IHealth, IBattle
         else
         {
             anim.SetTrigger("OnDead");
-            Invoke("OnDead", 4);
+            Invoke("OnDead", 4);            
             agent.isStopped = true;
+            agent.enabled = false;
+            collider.enabled = false;
             player.money += UnityEngine.Random.Range(100, 500);
         }
     }

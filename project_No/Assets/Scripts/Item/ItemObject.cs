@@ -3,10 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public enum ItemType : int
-{
-    Weapon = 0,
-    HealthPotion = 1,
-    StaminaPotion = 2,
+{    
+    HealthPotion = 0,
+    StaminaPotion = 1,
     Defult
 }
 
