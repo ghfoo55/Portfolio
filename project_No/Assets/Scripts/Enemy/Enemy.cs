@@ -1,7 +1,5 @@
-using System;
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.InputSystem;
 
 
 public class Enemy : MonoBehaviour, IHealth, IBattle
@@ -39,11 +37,14 @@ public class Enemy : MonoBehaviour, IHealth, IBattle
     public string enemyName;
     public GameObject enemyHPBar;
 
+    public GameObject item;
+
     IBattle playerAttack;
     Animator anim;
     NavMeshAgent agent;
     Player player;
     new Collider collider;
+
     void Start()
     {
         playerAttack = GameManager.Inst.MainPlayer.GetComponent<IBattle>();
@@ -81,11 +82,12 @@ public class Enemy : MonoBehaviour, IHealth, IBattle
         else
         {
             anim.SetTrigger("OnDead");
-            Invoke("OnDead", 4);            
+            Invoke("OnDead", 4);
             agent.isStopped = true;
             agent.enabled = false;
             collider.enabled = false;
-            player.money += UnityEngine.Random.Range(100, 500);
+            DropItem();
+            player.money += Random.Range(100, 500);
         }
     }
 
@@ -93,5 +95,10 @@ public class Enemy : MonoBehaviour, IHealth, IBattle
     {
         enemyHPBar.SetActive(false);
         Destroy(this.gameObject);
+    }
+
+    private void DropItem()
+    {
+        Instantiate(item, transform.position, transform.rotation);
     }
 }

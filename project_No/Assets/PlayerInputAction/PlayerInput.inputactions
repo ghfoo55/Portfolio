@@ -51,15 +51,6 @@
                     "initialStateCheck": false
                 },
                 {
-                    "name": "Parrying",
-                    "type": "Button",
-                    "id": "b9723fef-0ab5-4eac-9a4e-f4d8cdc5746f",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
                     "name": "LockOn",
                     "type": "Button",
                     "id": "7d574aee-2a79-4a1c-a27a-23450edb72e4",
@@ -175,17 +166,6 @@
                     "processors": "",
                     "groups": "KeyboardMouse",
                     "action": "Dodge",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "ae65bedf-a59e-4f05-90d1-acb4929ad3bb",
-                    "path": "<Mouse>/rightButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "KeyboardMouse",
-                    "action": "Parrying",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

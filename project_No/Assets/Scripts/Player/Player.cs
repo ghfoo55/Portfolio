@@ -90,8 +90,6 @@ public class Player : MonoBehaviour, IHealth, IStamina, IBattle
 
     GameObject weapon;
 
-    GameObject parryingArea;
-
     IBattle attackTarget;
 
     ParticleSystem particleWeapon;
@@ -118,7 +116,6 @@ public class Player : MonoBehaviour, IHealth, IStamina, IBattle
         anim = GetComponent<Animator>();
         cam = GameObject.Find("MainCamera");
         weapon = GetComponentInChildren<FindWeapon>().gameObject;
-        parryingArea = GameObject.Find("ParryingArea");
         particleWeapon = weapon.GetComponentInChildren<ParticleSystem>();
         lockOnEnemy = GetComponent<LockOnEnemy>();
         inventory = GameObject.Find("Inventory");        
@@ -133,8 +130,7 @@ public class Player : MonoBehaviour, IHealth, IStamina, IBattle
         inputAction.Player.Run.performed += Run;
         inputAction.Player.Run.canceled += Run;
         inputAction.Player.Attack.performed += OnAttack;
-        inputAction.Player.Dodge.performed += Dodge;
-        inputAction.Player.Parrying.performed += Parrying;        
+        inputAction.Player.Dodge.performed += Dodge;      
         inputAction.Player.LockOn.performed += LockOn;
         inputAction.Player.Inventory.performed += OnInven;
     }    
@@ -143,7 +139,6 @@ public class Player : MonoBehaviour, IHealth, IStamina, IBattle
     {
         inputAction.Player.Inventory.performed -= OnInven;
         inputAction.Player.LockOn.performed -= LockOn;
-        inputAction.Player.Parrying.performed -= Parrying;
         inputAction.Player.Dodge.performed -= Dodge;
         inputAction.Player.Attack.performed -= OnAttack;
         inputAction.Player.Run.canceled -= Run;
@@ -167,7 +162,6 @@ public class Player : MonoBehaviour, IHealth, IStamina, IBattle
         inventory.SetActive(false);
         weapon.SetActive(false);
         weapon.gameObject.GetComponent<BoxCollider>().enabled = false;
-        parryingArea.SetActive(false);
     }    
 
     private void Move(InputAction.CallbackContext context)
@@ -275,20 +269,6 @@ public class Player : MonoBehaviour, IHealth, IStamina, IBattle
             }
         }
     }
-
-    private void Parrying(InputAction.CallbackContext _)
-    {
-        parryingArea.SetActive(true);
-        StartCoroutine(ParryingSycle());
-        BattleModeChange();
-    }
-
-    IEnumerator ParryingSycle()
-    {
-        yield return new WaitForSecondsRealtime(0.2f);
-
-        parryingArea.SetActive(false);
-    }   
 
     private void LockOn(InputAction.CallbackContext _)
     {
