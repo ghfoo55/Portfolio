@@ -23,6 +23,6 @@ public class NextStage : MonoBehaviour
 
     private void SceneLoad()
     {
-        SceneManager.LoadScene(stageName);
+        SceneManager.LoadScene(stageName);        
     }
 }

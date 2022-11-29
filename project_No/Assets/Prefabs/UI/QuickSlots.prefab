@@ -416,6 +416,7 @@ GameObject:
   - component: {fileID: 2754893784501070118}
   - component: {fileID: 2754893784501070120}
   - component: {fileID: 2754893784501070119}
+  - component: {fileID: 534700479}
   m_Layer: 5
   m_Name: QuickSlot
   m_TagString: Untagged
@@ -484,6 +485,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &534700479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2754893784501070117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates: []
 --- !u!1 &2754893785238940262
 GameObject:
   m_ObjectHideFlags: 0
@@ -495,6 +509,9 @@ GameObject:
   - component: {fileID: 2754893785238940263}
   - component: {fileID: 2754893785238940265}
   - component: {fileID: 2754893785238940264}
+  - component: {fileID: 1156726719}
+  - component: {fileID: 6008039280427051597}
+  - component: {fileID: 1156726718}
   m_Layer: 5
   m_Name: QuickSlots
   m_TagString: Untagged
@@ -563,6 +580,49 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1156726719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2754893785238940262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c15ac3e36535a4149955e8723b05c673, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventoryObject: {fileID: 11400000, guid: 5bf932045946c6946bdf8c378fe55ab2, type: 2}
+  staticSlots:
+  - {fileID: 2754893784501070117}
+  - {fileID: 2754893785589480712}
+  - {fileID: 2754893786104136533}
+--- !u!114 &6008039280427051597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2754893785238940262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates: []
+--- !u!114 &1156726718
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2754893785238940262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7112c9dc36e0784893f9081ef516434, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inventoryObject: {fileID: 11400000, guid: 5bf932045946c6946bdf8c378fe55ab2, type: 2}
 --- !u!1 &2754893785350137204
 GameObject:
   m_ObjectHideFlags: 0
@@ -709,6 +769,7 @@ GameObject:
   - component: {fileID: 2754893785589480713}
   - component: {fileID: 2754893785589480715}
   - component: {fileID: 2754893785589480714}
+  - component: {fileID: 2126286812}
   m_Layer: 5
   m_Name: QuickSlot1
   m_TagString: Untagged
@@ -777,6 +838,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &2126286812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2754893785589480712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates: []
 --- !u!1 &2754893786104136533
 GameObject:
   m_ObjectHideFlags: 0
@@ -788,6 +862,7 @@ GameObject:
   - component: {fileID: 2754893786104136534}
   - component: {fileID: 2754893786104136536}
   - component: {fileID: 2754893786104136535}
+  - component: {fileID: 1381292048}
   m_Layer: 5
   m_Name: QuickSlot2
   m_TagString: Untagged
@@ -856,6 +931,19 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1381292048
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2754893786104136533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates: []
 --- !u!1 &2754893786261571064
 GameObject:
   m_ObjectHideFlags: 0

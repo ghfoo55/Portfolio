@@ -41,9 +41,7 @@ public class GameManager : MonoBehaviour
     }
 
     private void OnSceneLoaded(Scene arg0, LoadSceneMode arg1)
-    {
-        
-
+    {       
         if (sceneIndex != arg0.buildIndex)
         {
             sceneIndex = arg0.buildIndex;

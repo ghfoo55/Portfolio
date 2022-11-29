@@ -17,6 +17,7 @@ public class LockOnEnemy : MonoBehaviour
     void Start()
     {
         enemy = GameManager.Inst.enemyMonster.GetComponent<Enemy>();
+
         if (lockOnEffect == null)
         {
             lockOnEffect = GameObject.Find("LockOnEffect");
@@ -25,7 +26,7 @@ public class LockOnEnemy : MonoBehaviour
     }
 
     void Update()
-    {
+    {        
         if (lockOnEffect != null)
         {
             lockOnEffect.transform.Rotate(Vector3.right * 360 * Time.deltaTime);
