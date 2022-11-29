@@ -14,7 +14,7 @@ public class Enemy_HPBar : MonoBehaviour
 
     private void Start()
     {
-        health = GameManager.Inst.enemyMonster.GetComponent<IHealth>();
+        health = GetComponentInParent<IHealth>();
         healthSlider = GetComponent<Slider>();
         enemyName = transform.Find("EnemyNameText").GetComponent<TextMeshProUGUI>();
         enmey = GameManager.Inst.enemyMonster;

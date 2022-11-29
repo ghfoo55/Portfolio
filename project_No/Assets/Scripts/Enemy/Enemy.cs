@@ -49,7 +49,7 @@ public class Enemy : MonoBehaviour, IHealth, IBattle
     {
         playerAttack = GameManager.Inst.MainPlayer.GetComponent<IBattle>();
         anim = GetComponent<Animator>();
-        agent = GetComponent<NavMeshAgent>();
+        agent = GetComponent<NavMeshAgent>();        
         enemyHPBar.SetActive(false);
         player = GameManager.Inst.MainPlayer;
         collider = GetComponent<Collider>();
@@ -69,6 +69,7 @@ public class Enemy : MonoBehaviour, IHealth, IBattle
         {
             float damage = playerAttack.AttackPower;
             target.TakeDamage(damage);
+            enemyHPBar.SetActive(true);
         }
     }
 
@@ -78,6 +79,7 @@ public class Enemy : MonoBehaviour, IHealth, IBattle
         if (hp > 0.0f)
         {            
             anim.SetTrigger("Hit");
+            enemyHPBar.SetActive(true);
         }
         else
         {

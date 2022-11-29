@@ -20,7 +20,7 @@ MonoBehaviour:
     id: 0
     name: 
     buffs:
-    - stat: 3
+    - stat: 0
       value: 150
       min: 150
       max: 150

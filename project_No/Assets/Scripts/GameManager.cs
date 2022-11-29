@@ -19,18 +19,17 @@ public class GameManager : MonoBehaviour
     }
 
     static GameManager instance = null;
-    public static GameManager Inst
-    {
-        get => instance;
-    }
+    public static GameManager Inst { get => instance; }
+
+    int sceneIndex = 0; 
 
     private void Awake()
     {
         if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(this.gameObject);
-            SceneManager.sceneLoaded += OnSceneLoaded;
+            instance.Initialize();
+            DontDestroyOnLoad(this.gameObject);            
         }
         else 
         {
@@ -39,17 +38,22 @@ public class GameManager : MonoBehaviour
                 Destroy(this.gameObject);
             }
         }
-
     }
 
     private void OnSceneLoaded(Scene arg0, LoadSceneMode arg1)
     {
-        Initialize();
+        
+
+        if (sceneIndex != arg0.buildIndex)
+        {
+            sceneIndex = arg0.buildIndex;
+        }
     }
 
     private void Initialize()
     {
         player = FindObjectOfType<Player>();
         enemy = FindObjectOfType<Enemy>();
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
 }

@@ -26,7 +26,6 @@ public class PatrolWayPoint : State<EnemyController>
         {
             context.FindNextWayPoint();
         }
-
         if(context.targetWayPoint)
         {
             agent.SetDestination(context.targetWayPoint.position);
@@ -44,8 +43,7 @@ public class PatrolWayPoint : State<EnemyController>
                 stateMachine.ChangeState<AttackState>();
             }
             else
-            {
-                enemy.enemyHPBar.SetActive(true);
+            {                
                 stateMachine.ChangeState<MoveState>();
             }
         }

@@ -19,7 +19,7 @@ public class LockOnEnemy : MonoBehaviour
         enemy = GameManager.Inst.enemyMonster.GetComponent<Enemy>();
         if (lockOnEffect == null)
         {
-            lockOnEffect = GameObject.Find("LockOnEffect");            
+            lockOnEffect = GameObject.Find("LockOnEffect");
         }
         lockOnEffect.SetActive(false);
     }
@@ -77,8 +77,7 @@ public class LockOnEnemy : MonoBehaviour
                 lockOnTarget = nearest.transform;                               
                 lockOnEffect.transform.position = new Vector3(lockOnTarget.position.x, lockOnTarget.position.y + 2, lockOnTarget.position.z);
                 lockOnEffect.transform.parent = lockOnTarget;                
-                lockOnEffect.SetActive(true);
-                enemy.enemyHPBar.SetActive(true);
+                lockOnEffect.SetActive(true);                
 
                 result = true;
             }
