@@ -62,7 +62,10 @@ public class Enemy : MonoBehaviour, IHealth, IBattle
         enemyHPBar.SetActive(false);
         player = GameManager.Inst.MainPlayer;
         collider = GetComponent<Collider>();
-        gameClear.SetActive(false);
+        if (enemyType == EnemyType.Boss)
+        {
+            gameClear.SetActive(false);
+        }
     }
 
     private void Awake()
