@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2045735610440204354}
   m_Layer: 5
   m_Name: Item Shop
-  m_TagString: Untagged
+  m_TagString: ItemShop
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

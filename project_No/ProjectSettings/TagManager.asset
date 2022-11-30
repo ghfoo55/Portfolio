@@ -15,6 +15,15 @@ TagManager:
   - EnemyFireBall
   - Wall
   - Ground
+  - mask
+  - inventory
+  - lockOn
+  - playerHpBar
+  - playerStaminaBar
+  - quickSlot
+  - itemShopEnter
+  - stageChange
+  - mainCamera
   layers:
   - Default
   - TransparentFX

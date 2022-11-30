@@ -18,24 +18,25 @@ public class GameManager : MonoBehaviour
         get => enemy;
     }
 
-    static GameManager instance = null;
+    public static GameManager instance = null;
     public static GameManager Inst { get => instance; }
 
-    int sceneIndex = 0; 
+    int sceneIndex = 0;
 
     private void Awake()
     {
         if (instance == null)
         {
             instance = this;
+            
+            //DontDestroyOnLoad(this.gameObject);
             instance.Initialize();
-            DontDestroyOnLoad(this.gameObject);            
         }
         else 
         {
             if (instance != this)
             {
-                Destroy(this.gameObject);
+                //Destroy(this.gameObject);
             }
         }
     }
@@ -45,7 +46,7 @@ public class GameManager : MonoBehaviour
         if (sceneIndex != arg0.buildIndex)
         {
             sceneIndex = arg0.buildIndex;
-        }
+        }        
     }
 
     private void Initialize()

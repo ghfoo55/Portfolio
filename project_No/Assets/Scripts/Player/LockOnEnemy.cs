@@ -32,6 +32,7 @@ public class LockOnEnemy : MonoBehaviour
             lockOnEffect.transform.Rotate(Vector3.right * 360 * Time.deltaTime);
         }
     }
+
     public void LockOnToggle()
     {
         if(lockOnTarget == null)

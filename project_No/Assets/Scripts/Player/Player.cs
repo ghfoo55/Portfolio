@@ -3,6 +3,7 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UIElements;
 
 public class Player : MonoBehaviour, IHealth, IStamina, IBattle
 {
@@ -109,6 +110,12 @@ public class Player : MonoBehaviour, IHealth, IStamina, IBattle
     private InventoryObject quickSlotUI;
 
     public int money;
+
+    public AudioClip walkAudio;
+    public AudioClip runAudio;
+    public AudioClip attackAudio;
+
+    AudioSource audioSource;
     private void Awake()
     {        
         inputAction = new();
@@ -118,7 +125,8 @@ public class Player : MonoBehaviour, IHealth, IStamina, IBattle
         weapon = GetComponentInChildren<FindWeapon>().gameObject;
         particleWeapon = weapon.GetComponentInChildren<ParticleSystem>();
         lockOnEnemy = GetComponent<LockOnEnemy>();
-        inventory = GameObject.Find("Inventory");        
+        inventory = GameObject.Find("Inventory");
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void OnEnable()
@@ -177,7 +185,7 @@ public class Player : MonoBehaviour, IHealth, IStamina, IBattle
             if (moveMode == MoveMode.Walk)
             {
                 anim.SetFloat("Run", 0.5f);
-                speed = walkSpeed;                
+                speed = walkSpeed;         
             }
             else if (moveMode == MoveMode.Run)
             {
@@ -238,7 +246,7 @@ public class Player : MonoBehaviour, IHealth, IStamina, IBattle
         }
         else
         {
-            moveMode = MoveMode.Walk;
+            moveMode = MoveMode.Walk;            
         }
     }
     
@@ -419,6 +427,23 @@ public class Player : MonoBehaviour, IHealth, IStamina, IBattle
     {
         anim.SetTrigger("Dead");
         inputAction.Disable();
+    }
+
+    public void PlaySound(string action)
+    {
+        switch (action)
+        {
+            case "Walk":
+                audioSource.clip = walkAudio;
+                break;
+            case "Run":
+                audioSource.clip = runAudio;
+                break;
+            case "Attack":
+                audioSource.clip = attackAudio;
+                break;
+        }
+        audioSource.Play();
     }
 
 }

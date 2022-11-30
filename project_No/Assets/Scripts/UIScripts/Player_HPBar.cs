@@ -10,10 +10,11 @@ public class Player_HPBar : MonoBehaviour
     IHealth health;
     Slider healthSlider;
     TextMeshProUGUI healthText;
-    
+
+
     private void Start()
     {
-        health = GameManager.Inst.MainPlayer.GetComponent<IHealth>();        
+        health = GameManager.Inst.MainPlayer.GetComponent<IHealth>();
         healthSlider = GetComponent<Slider>();
         healthText = transform.Find("HealthText").GetComponent<TextMeshProUGUI>();
     }
@@ -23,7 +24,8 @@ public class Player_HPBar : MonoBehaviour
         health.onHPChange += SetHP_Value;
         healthSlider.value = health.HP / health.MaxHP;    
         healthText.text = $"{(int)health.HP} / {health.MaxHP}";
-    }    
+    }
+
 
     private void SetHP_Value()
     {

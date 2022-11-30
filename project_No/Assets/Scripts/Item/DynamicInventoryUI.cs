@@ -23,7 +23,7 @@ public class DynamicInventoryUI : InventoryUI
 
     TextMeshProUGUI text;
     Player player;
-    
+
     protected override void Start()
     {
         text = transform.Find("Gold").GetComponent<TextMeshProUGUI>();
@@ -33,6 +33,7 @@ public class DynamicInventoryUI : InventoryUI
     {
         text.text = $"¼ÒÁö°ñµå : {player.money}";
     }
+
     public override void CreateSlotUIs()
     {
         slotUIs = new Dictionary<GameObject, InventorySlot>();

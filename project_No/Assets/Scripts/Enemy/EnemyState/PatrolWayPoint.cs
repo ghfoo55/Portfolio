@@ -10,14 +10,12 @@ public class PatrolWayPoint : State<EnemyController>
     private NavMeshAgent agent;
 
     protected int hashMove = Animator.StringToHash("IsMove");
-
-    Enemy enemy;
+        
     public override void OnInitialized()
     {
         anim = context.GetComponent<Animator>();
         rigid = context.GetComponent<Rigidbody>();
         agent = context.GetComponent<NavMeshAgent>();
-        enemy = GameManager.Inst.enemyMonster.GetComponent<Enemy>();
     }
 
     public override void OnEnter()

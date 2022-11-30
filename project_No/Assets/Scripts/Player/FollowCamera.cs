@@ -10,6 +10,8 @@ public class FollowCamera : MonoBehaviour
 
     Vector3 offset = Vector3.zero;
 
+    //public static GameManager instance;
+
     private void Start()
     {
         if (target == null)
@@ -18,6 +20,22 @@ public class FollowCamera : MonoBehaviour
         }
         offset = transform.position - target.position;
     }
+
+    //private void Awake()
+    //{
+    //    if (instance == null)
+    //    {
+    //        DontDestroyOnLoad(this);
+    //        return;
+    //    }
+    //    else
+    //    {
+    //        if (instance != this)
+    //        {
+    //            Destroy(this);
+    //        }
+    //    }
+    //}
 
     private void FixedUpdate()
     {

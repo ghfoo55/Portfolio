@@ -54,7 +54,7 @@ public class EnemyController : MonoBehaviour
             float distance = Vector3.Distance(transform.position, Target.position);
             return distance <= attackRange;
         }
-    }   
+    }
 
 
     public Transform SearchPlayer()

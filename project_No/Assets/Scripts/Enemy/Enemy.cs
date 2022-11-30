@@ -45,6 +45,13 @@ public class Enemy : MonoBehaviour, IHealth, IBattle
     Player player;
     new Collider collider;
 
+    public AudioClip slimeAttack;
+    public AudioClip golemAttack;
+    public AudioClip dragonMove;
+    public AudioClip dragonAttack;
+    public AudioClip dragonFly;
+    public AudioClip fireBall;
+    AudioSource audioSource;
     void Start()
     {
         playerAttack = GameManager.Inst.MainPlayer.GetComponent<IBattle>();
@@ -55,10 +62,17 @@ public class Enemy : MonoBehaviour, IHealth, IBattle
         collider = GetComponent<Collider>();
     }
 
+    private void Awake()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
+
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "PlayerWeapon")
-        {            
+        {
+            playerAttack = GameManager.Inst.MainPlayer.GetComponent<IBattle>();
             Attack(this);
         }
     }          
@@ -66,7 +80,7 @@ public class Enemy : MonoBehaviour, IHealth, IBattle
     public void Attack(IBattle target)
     {
         if (target != null)
-        {
+        {            
             float damage = playerAttack.AttackPower;
             target.TakeDamage(damage);
             enemyHPBar.SetActive(true);
@@ -102,5 +116,31 @@ public class Enemy : MonoBehaviour, IHealth, IBattle
     private void DropItem()
     {
         Instantiate(item, transform.position, transform.rotation);
+    }
+
+    public void PlaySound(string action)
+    {
+        switch (action)
+        {
+            case "SlimeAttack":
+                audioSource.clip = slimeAttack;
+                break;
+            case "GolemAttack":
+                audioSource.clip = golemAttack;
+                break;
+            case "DragonAttack":
+                audioSource.clip = dragonAttack;
+                break;
+            case "DragonMove":
+                audioSource.clip = dragonMove;
+                break;
+            case "DragonFly":
+                audioSource.clip = dragonFly;
+                break;
+            case "FireBall":
+                audioSource.clip = fireBall;
+                break;
+        }
+        audioSource.Play();
     }
 }
