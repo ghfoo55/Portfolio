@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
+using Cursor = UnityEngine.Cursor;
 
 public class Player : MonoBehaviour, IHealth, IStamina, IBattle
 {
@@ -171,10 +172,9 @@ public class Player : MonoBehaviour, IHealth, IStamina, IBattle
         inventoryObject.OnUseItem += OnUseItem;
         inventory.SetActive(false);
         weapon.SetActive(false);
-        weapon.gameObject.GetComponent<BoxCollider>().enabled = false;
+        weapon.gameObject.GetComponentInChildren<BoxCollider>().enabled = false;
         playerDead.SetActive(false);
-
-
+        Cursor.visible = false;        
     }    
 
     private void Move(InputAction.CallbackContext context)
@@ -296,6 +296,7 @@ public class Player : MonoBehaviour, IHealth, IStamina, IBattle
             onInven = true;
             inputAction.Player.Attack.Disable();
             inputAction.Player.Look.Disable();
+            Cursor.visible = true;            
         }
         else if(onInven)
         {
@@ -303,6 +304,7 @@ public class Player : MonoBehaviour, IHealth, IStamina, IBattle
             onInven = false;
             inputAction.Player.Attack.Enable();
             inputAction.Player.Look.Enable();
+            Cursor.visible = false;
         }
     }
 
@@ -349,6 +351,7 @@ public class Player : MonoBehaviour, IHealth, IStamina, IBattle
             shop.Enter(this);
             inputAction.Player.Attack.Disable();
             inputAction.Player.Look.Disable();
+            Cursor.visible = false;
         }
     }
 
@@ -360,6 +363,7 @@ public class Player : MonoBehaviour, IHealth, IStamina, IBattle
             shop.Exit();
             inputAction.Player.Attack.Enable();
             inputAction.Player.Look.Enable();
+            Cursor.visible = false;
         }
     }
 
@@ -433,6 +437,7 @@ public class Player : MonoBehaviour, IHealth, IStamina, IBattle
         anim.SetTrigger("Dead");
         inputAction.Disable();
         playerDead.SetActive(true);
+        Cursor.visible = true;
     }
 
     public void PlaySound(string action)

@@ -47030,7 +47030,7 @@ AnimationClip:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 0.56666666
+        time: 0.6666667
         value: 0
         inSlope: Infinity
         outSlope: Infinity
@@ -47042,7 +47042,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: 213.!Root/7.joint_HipMaster/8.joint_Torso/10.joint_Torso2/54.joint_RightShoulder/56.joint_RightArm/61.joint_RightElbow/66.joint_RightWrist/Sword
+    path: 213.!Root/7.joint_HipMaster/8.joint_Torso/10.joint_Torso2/54.joint_RightShoulder/56.joint_RightArm/61.joint_RightElbow/66.joint_RightWrist/Sword/Weapon
     classID: 65
     script: {fileID: 0}
   m_PPtrCurves: []
@@ -47922,7 +47922,7 @@ AnimationClip:
       customType: 8
       isPPtrCurve: 0
     - serializedVersion: 2
-      path: 3629197861
+      path: 2800079390
       attribute: 3305885265
       script: {fileID: 0}
       typeID: 65
@@ -95054,7 +95054,7 @@ AnimationClip:
         inWeight: 0
         outWeight: 0
       - serializedVersion: 3
-        time: 0.56666666
+        time: 0.6666667
         value: 0
         inSlope: Infinity
         outSlope: Infinity
@@ -95066,7 +95066,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: 213.!Root/7.joint_HipMaster/8.joint_Torso/10.joint_Torso2/54.joint_RightShoulder/56.joint_RightArm/61.joint_RightElbow/66.joint_RightWrist/Sword
+    path: 213.!Root/7.joint_HipMaster/8.joint_Torso/10.joint_Torso2/54.joint_RightShoulder/56.joint_RightArm/61.joint_RightElbow/66.joint_RightWrist/Sword/Weapon
     classID: 65
     script: {fileID: 0}
   m_EulerEditorCurves: []

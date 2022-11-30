@@ -4081,6 +4081,7 @@ MonoBehaviour:
   walkAudio: {fileID: 8300000, guid: 3d132da7af60f1145a3deb6a8bc42a08, type: 3}
   runAudio: {fileID: 8300000, guid: f26cf9ded47cf0140957490a16f85acc, type: 3}
   attackAudio: {fileID: 8300000, guid: 7053294e066eb1945baa4d9cc9194f15, type: 3}
+  playerDead: {fileID: 0}
 --- !u!136 &6102354037611955484
 CapsuleCollider:
   m_ObjectHideFlags: 0

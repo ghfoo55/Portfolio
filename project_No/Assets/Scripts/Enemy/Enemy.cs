@@ -121,7 +121,8 @@ public class Enemy : MonoBehaviour, IHealth, IBattle
         {
             gameClear.SetActive(true);
             enemyHPBar.SetActive(false);
-            Destroy(this.gameObject);            
+            Destroy(this.gameObject);
+            Cursor.visible = true;
         }
     }
 
