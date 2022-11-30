@@ -116,6 +116,8 @@ public class Player : MonoBehaviour, IHealth, IStamina, IBattle
     public AudioClip attackAudio;
 
     AudioSource audioSource;
+
+    public GameObject playerDead;
     private void Awake()
     {        
         inputAction = new();
@@ -170,6 +172,9 @@ public class Player : MonoBehaviour, IHealth, IStamina, IBattle
         inventory.SetActive(false);
         weapon.SetActive(false);
         weapon.gameObject.GetComponent<BoxCollider>().enabled = false;
+        playerDead.SetActive(false);
+
+
     }    
 
     private void Move(InputAction.CallbackContext context)
@@ -427,6 +432,7 @@ public class Player : MonoBehaviour, IHealth, IStamina, IBattle
     {
         anim.SetTrigger("Dead");
         inputAction.Disable();
+        playerDead.SetActive(true);
     }
 
     public void PlaySound(string action)

@@ -8,15 +8,11 @@ public class NextStage : MonoBehaviour
     public string stageName;
 
     FadeInOut fadeInOut;
-
-    private GameObject slime;
     private void Start()
     {
         fadeInOut = FindObjectOfType<FadeInOut>();
 
-        fadeInOut.OnFadeOut = SceneLoad;
-
-        slime = GameObject.FindGameObjectWithTag("Enemy");
+        fadeInOut.OnFadeOut = SceneLoad;        
     }
 
     private void OnTriggerEnter(Collider other)

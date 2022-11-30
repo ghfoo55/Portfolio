@@ -20,18 +20,18 @@ public class AttackState : State<EnemyController>
 
     public override void OnEnter()
     {
-
-
         if (context.IsAvailableAttack && attackDelay > context.attackDelay)
         {
             anim.SetTrigger(hashAttack);
             attackDelay = 0;
         }
+       
         else
         {
             stateMachine.ChangeState<IdleState>();
             attackDelay += Time.deltaTime;
         }
+        
     }
 
     public override void Update(float deltaTime)

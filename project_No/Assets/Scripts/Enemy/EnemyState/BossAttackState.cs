@@ -18,7 +18,7 @@ public class BossAttackState : State<EnemyController>
     public override void OnEnter()
     {
         if (enemy.enemyType == Enemy.EnemyType.Boss)
-        {
+        {            
             if (context.IsAvailableAttack && fireBallDelay > context.fireBallDelay && enemy.hp < enemy.maxHP * 0.5f)
             {
                 anim.SetTrigger(hashFireBall);

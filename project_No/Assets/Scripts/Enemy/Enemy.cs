@@ -52,6 +52,8 @@ public class Enemy : MonoBehaviour, IHealth, IBattle
     public AudioClip dragonFly;
     public AudioClip fireBall;
     AudioSource audioSource;
+
+    public GameObject gameClear;
     void Start()
     {
         playerAttack = GameManager.Inst.MainPlayer.GetComponent<IBattle>();
@@ -60,6 +62,7 @@ public class Enemy : MonoBehaviour, IHealth, IBattle
         enemyHPBar.SetActive(false);
         player = GameManager.Inst.MainPlayer;
         collider = GetComponent<Collider>();
+        gameClear.SetActive(false);
     }
 
     private void Awake()
@@ -111,6 +114,12 @@ public class Enemy : MonoBehaviour, IHealth, IBattle
     {
         enemyHPBar.SetActive(false);
         Destroy(this.gameObject);
+        if(enemyType == EnemyType.Boss)
+        {
+            gameClear.SetActive(true);
+            enemyHPBar.SetActive(false);
+            Destroy(this.gameObject);            
+        }
     }
 
     private void DropItem()

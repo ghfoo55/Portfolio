@@ -43,9 +43,13 @@ public class IdleState : State<EnemyController>
             {
                 stateMachine.ChangeState<MoveState>();
             }
-            if (enemy.enemyType == Enemy.EnemyType.Boss && enemy.hp < enemy.MaxHP * 0.5f)
+            if (context.IsAvailableAttack && enemy.enemyType == Enemy.EnemyType.Boss && enemy.hp < enemy.MaxHP * 0.5f)
             {
                 stateMachine.ChangeState<BossAttackState>();
+            }
+            else if (enemy.enemyType == Enemy.EnemyType.Boss && enemy.hp < enemy.MaxHP * 0.5f)
+            {
+                stateMachine.ChangeState<MoveState>();
             }
         }
         else if(isPatrol && stateMachine.ElapsedTimeInState > idleTime)
